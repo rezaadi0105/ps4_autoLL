@@ -1,4 +1,7 @@
 # ps4_autoLL
+
+**This repo is for users who want to enjoy the early HEN with Lua & Lapse for the main update, please refer to the main repo [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)**
+
 Automatically loads HEN with Lua + Lapse kernel exploit for PS4, supports PS4 firmware up to `12.02`.
 
 Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and [itsPLK's fork](https://github.com/itsPLK/ps5_lua_loader)
