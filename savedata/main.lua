@@ -170,7 +170,7 @@ function main()
 
     kernel_offset = get_kernel_offset()
 
-    send_ps_notification("PS4 AutoLuaLapse HEN v0.1")
+    send_ps_notification("PS4 AutoLuaLapse HEN v0.1\n Firmware: " .. FW_VERSION)
 
     if tonumber(FW_VERSION) <= 12.02 then
         kernel_exploit_lua = "lapse.lua"
@@ -181,15 +181,17 @@ function main()
 
     if is_jailbroken() then
         print("[+] Already jailbroken, skipping exploit")
-        send_ps_notification("Already jailbroken!\n\nClosing game...")
+        send_ps_notification("Already jailbroken!")
         syscall.kill(syscall.getpid(), 15)
         return
     end
 
+    sleep(1000, "ms") -- wait a little before starting the kernel exploit
+
     load_and_run_lua(get_savedata_path() .. kernel_exploit_lua)
 
     if not is_jailbroken() then
-        send_ps_notification("Jailbreak failed\nClosing game...")
+        send_ps_notification("Jailbreak failed\nRestart the console and try again...")
         syscall.kill(syscall.getpid(), 15)
         return
     end
@@ -199,6 +201,7 @@ function main()
     load_and_run_lua(get_savedata_path() .. "autoload.lua")
 
     load_and_run_lua(get_savedata_path() .. "bin_loader.lua")
+
     syscall.kill(syscall.getpid(), 15)
 end
 

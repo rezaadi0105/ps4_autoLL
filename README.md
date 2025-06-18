@@ -1,19 +1,20 @@
 # ps4_autoLL
 
-**This repo is for users who want to enjoy the early HEN with Lua & Lapse for the main update, please refer to the main repo [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)**
+**This repo is for users who want to enjoy the early HEN with Lua & Lapse. For the main update, please refer to the main repo [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)**
 
 Automatically loads HEN with Lua + Lapse kernel exploit for PS4, supports PS4 firmware up to `12.02`.
 
 Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and [itsPLK's fork](https://github.com/itsPLK/ps5_lua_loader)
 
 ## How to use
-* Copy files from savedata dir to your save, encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
+* Copy files from savedata dir to your decrypted save, then encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
+* Copy save to your PS4
 * Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
 * Copy `payload.bin` to the root dir your USB drive (exFAT format) (it only needs to do once)
 * Plug to PS4 and run the games, it will do the exploit and copy `payload.bin` to internal HDD (it only needs to be copied once)
 * enjoy <be>
 
-Please note that there might be bugs; this is an early version of the Lapse exploit, so keep it in mind
+Please note that there might be bugs; this is an early version of the Lapse exploit, so keep it in mind.
    
 ## Game Compatibility
 
