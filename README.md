@@ -1,2 +1,46 @@
 # ps4_autoLL
-Auto load HEN with Lua + Lapse exploit for PS4
+Automatically loads HEN with Lua + Lapse kernel exploit for PS4, supports PS4 firmware up to `12.02`.
+
+Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and [itsPLK's fork](https://github.com/itsPLK/ps5_lua_loader)
+
+## How to use
+* copy files from savedata dir to your save, encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
+* download vtx hen from [EchoStretch's releases] (https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
+* copy `payload.bin` to root dir your USB drive (exFAT format)
+* plug to ps4 and run the games, it will do the exploit and copy `payload.bin` to internal HDD (it's only need to copy for one time)
+* enjoy, please note that there might bugs, this is early version of lapse exploit so keep it in mind
+   
+## Game Compatibility
+
+Currently this loader is compatible with the following games:
+  
+| Game Title                            | TITLE ID    | Notes                                                                           |
+|---------------------------------------|-------------|---------------------------------------------------------------------------------|
+| Raspberry Cube                        | CUSA16074   |                                                                                 |
+| Aibeya                                | CUSA17068   |                                                                                 |
+| Hamidashi Creative                    | CUSA27389   |                                                                                 |
+| Hamidashi Creative Demo               | CUSA27390   | Requires latest firmware to download from PSN                                   |
+| Aikagi Kimi to Issho ni Pack          | CUSA16229   |                                                                                 |
+| Aikagi 2                              | CUSA19556   |                                                                                 |
+| IxSHE Tell                            | CUSA17112   |                                                                                 |
+| IxSHE Tell Demo                       | CUSA17126   | Requires latest firmware to download from PSN                                   |
+| Nora Princess and Stray Cat Heart HD  | CUSA13303   |                                                                                 |
+| Jinki Resurrection                    | CUSA25179   |                                                                                 |
+| Jinki Resurrection Demo               | CUSA25180   | Requires latest firmware to download from PSN                                   |
+| Fuyu Kiss                             | CUSA29745   |                                                                                 |
+| Fuyu Kiss Demo                        | CUSA29746   | Requires latest firmware to download from PSN                                   |
+| Nora Princess and Crying Cat 2        | CUSA13586   |                                                                                 |
+
+
+## Credits
+
+* shahrilnet – creator and maintainer of the original [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)
+* excellent blog [post](https://memorycorruption.net/posts/rce-lua-factorio/) where most of the ideas of lua primitives are taken from 
+* flatz - for sharing ideas and lua implementations
+* null_ptr - for helping to develop umtx exploit for PS5 & numerous helps with the loader development
+* gezine - for sharing the vulnerable games & ideas
+* specter & chendo - for webkit implementations referenced a lot
+* al-azif - parts and information grabbed from his sdk, aswell as from his ftp server
+* horror - for the notification popup and ftp server payloads
+* everyone else who shared their knowledge with the community
+
