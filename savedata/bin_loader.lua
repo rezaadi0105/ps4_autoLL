@@ -47,7 +47,7 @@ function bin_loader:run()
     local thr_handle_addr = memory.alloc(8)
 
     print("spawning payload")
-    send_ps_notification("spawning payload")
+    -- send_ps_notification("spawning payload")
 
     -- spawn elf in new thread
     local ret = Thrd_create(thr_handle_addr, self.bin_entry_point):tonumber()
