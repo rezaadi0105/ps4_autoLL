@@ -8,7 +8,8 @@ Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and
 * Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
 * Copy `payload.bin` to the root dir your USB drive (exFAT format) (it only needs to do once)
 * Plug to PS4 and run the games, it will do the exploit and copy `payload.bin` to internal HDD (it only needs to be copied once)
-* enjoy
+* enjoy <be>
+
 Please note that there might be bugs; this is an early version of the Lapse exploit, so keep it in mind
    
 ## Game Compatibility
