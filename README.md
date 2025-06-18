@@ -4,11 +4,12 @@ Automatically loads HEN with Lua + Lapse kernel exploit for PS4, supports PS4 fi
 Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and [itsPLK's fork](https://github.com/itsPLK/ps5_lua_loader)
 
 ## How to use
-* copy files from savedata dir to your save, encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
-* download vtx hen from [EchoStretch's releases] (https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
-* copy `payload.bin` to root dir your USB drive (exFAT format)
-* plug to ps4 and run the games, it will do the exploit and copy `payload.bin` to internal HDD (it's only need to copy for one time)
-* enjoy, please note that there might bugs, this is early version of lapse exploit so keep it in mind
+* Copy files from savedata dir to your save, encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
+* Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
+* Copy `payload.bin` to the root dir your USB drive (exFAT format) (it only needs to do once)
+* Plug to PS4 and run the games, it will do the exploit and copy `payload.bin` to internal HDD (it only needs to be copied once)
+* enjoy
+Please note that there might be bugs; this is an early version of the Lapse exploit, so keep it in mind
    
 ## Game Compatibility
 
@@ -34,6 +35,7 @@ Currently this loader is compatible with the following games:
 
 ## Credits
 
+* abc – for the lapse exploits
 * shahrilnet – creator and maintainer of the original [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)
 * excellent blog [post](https://memorycorruption.net/posts/rce-lua-factorio/) where most of the ideas of lua primitives are taken from 
 * flatz - for sharing ideas and lua implementations
