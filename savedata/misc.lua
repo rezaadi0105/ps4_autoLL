@@ -50,6 +50,14 @@ function file_read(filename, mode)
     return io.open(filename, mode):read("*all")
 end
 
+function file_read2(filename)
+    local file = io.open(filename, "rb")
+    if not file then return nil end
+    local content = file:read("*all")
+    file:close()
+    return content
+end
+
 function hex_dump(buf, addr)
     addr = addr or 0
     local result = {}

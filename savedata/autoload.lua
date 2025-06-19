@@ -91,56 +91,52 @@ end
 
 
 function main()
-    local existing_internal = "/data/payload.bin"
-    if file_exists(existing_internal) then
-        print("[+] Payload already exists in /data/payload.bin")
-        return
-    end
 
+    local existing_internal = "/data/payload.bin"
     local payload_paths = {}
     for usb = 0, 7 do
         table.insert(payload_paths, string.format("/mnt/usb%d/", usb))
     end
 
-    local existing_path = nil
+    local usb_path = nil
     for _, path in ipairs(payload_paths) do
-        if file_exists(path .. autoload.options.autoload_hen) then
-            existing_path = path
+        local full_path = path .. autoload.options.autoload_hen
+        if file_exists(full_path) then
+            usb_path = full_path
             break
         end
     end
 
-    if not existing_path then
+    if not usb_path and not file_exists(existing_internal) then
         send_ps_notification("payload not found!")
         print("[-] payload not found!")
         return
     end
 
-    local source_path = existing_path .. autoload.options.autoload_hen
-    local dest_path = "/data/payload.bin"
+    if file_exists(existing_internal) then
+        local internal_data = file_read2(existing_internal)
+        local usb_data = file_read2(usb_path)
+        if internal_data and usb_data and internal_data == usb_data then
+            send_ps_notification("Payload already up to date!")
+            print("[=] Payload already up to date in /data/payload.bin")
+            return
+        end
+    end
 
-    print("[*] Copying payload to internal HDD...")
-    -- send_ps_notification("Copying payload to internal HDD...")
-
-    local src = io.open(source_path, "rb")
-    if not src then
-        -- send_ps_notification("Failed to open payload!")
-        print("[-] Failed to open payload at: " .. source_path)
+    local new_payload = file_read2(usb_path)
+    if not new_payload then
+        print("[-] Failed to read payload from: " .. usb_path)
         return
     end
 
-    local data = src:read("*all")
-    src:close()
-
-    local dst = io.open(dest_path, "wb")
-    if not dst then
-        -- send_ps_notification("Failed to write to /data!")
-        print("[-] Failed to open destination: " .. dest_path)
+    local dest_path = io.open(existing_internal, "wb")
+    if not dest_path then
+        print("[-] Failed to open destination: " .. existing_internal)
         return
     end
 
-    dst:write(data)
-    dst:close()
+    dest_path:write(new_payload)
+    dest_path:close()
 
     send_ps_notification("Payload copied successfully!")
     print("[+] Payload copied successfully to /data/payload.bin")
