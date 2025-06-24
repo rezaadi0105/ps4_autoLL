@@ -9,7 +9,7 @@ Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and
 ## How to use
 * Copy all files from savedata dir to your decrypted save (make sure to delete all files except the "sce_sys" folder before copy), then encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
 * Copy modified save to your PS4
-* Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) or from [@Al-Azif]'s [releases](https://uploadnow.io/en/share?utm_source=CBpKbp1) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
+* Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) or from [Al-Azif's releases](https://uploadnow.io/en/share?utm_source=CBpKbp1) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
 * Copy `payload.bin` to the root dir your USB drive (exFAT format) (it only needs to do once)
 * Plug the USB drive to your PS4 and run the games, it will do the exploit and copy payload to internal HDD (it only needs to be copied once) enjoy! <be>
 

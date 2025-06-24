@@ -181,13 +181,6 @@ function main()
         return
     end
 
-    if is_jailbroken() then
-        print("[+] Already jailbroken, skipping exploit")
-        send_ps_notification("Already jailbroken!")
-        syscall.kill(syscall.getpid(), 15)
-        return
-    end
-
     sleep(1000, "ms") -- wait a little before starting the kernel exploit
 
     load_and_run_lua(get_savedata_path() .. kernel_exploit_lua)
