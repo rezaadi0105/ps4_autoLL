@@ -92,12 +92,11 @@ end
 
 function main()
 
-    local existing_internal = "/data/payload.bin"
+    local internal_payload = "/data/payload.bin"
     local payload_paths = {}
     for usb = 0, 7 do
         table.insert(payload_paths, string.format("/mnt/usb%d/", usb))
     end
-
     local usb_path = nil
     for _, path in ipairs(payload_paths) do
         local full_path = path .. autoload.options.autoload_hen
@@ -106,15 +105,17 @@ function main()
             break
         end
     end
-
-    if not usb_path and not file_exists(existing_internal) then
+    if not usb_path and not file_exists(internal_payload) then
         send_ps_notification("payload not found!")
         print("[-] payload not found!")
         return
     end
-
-    if file_exists(existing_internal) then
-        local internal_data = file_read2(existing_internal)
+    if not usb_path and file_exists(internal_payload) then
+        print("using internal payload: " .. internal_payload)
+        return
+    end
+    if file_exists(internal_payload) then
+        local internal_data = file_read2(internal_payload)
         local usb_data = file_read2(usb_path)
         if internal_data and usb_data and internal_data == usb_data then
             send_ps_notification("Payload already up to date!")
@@ -122,16 +123,14 @@ function main()
             return
         end
     end
-
     local new_payload = file_read2(usb_path)
     if not new_payload then
         print("[-] Failed to read payload from: " .. usb_path)
         return
     end
-
-    local dest_path = io.open(existing_internal, "wb")
+    local dest_path = io.open(internal_payload, "wb")
     if not dest_path then
-        print("[-] Failed to open destination: " .. existing_internal)
+        print("[-] Failed to open destination: " .. internal_payload)
         return
     end
 

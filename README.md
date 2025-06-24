@@ -9,7 +9,7 @@ Base on [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader) and
 ## How to use
 * Copy all files from savedata dir to your decrypted save (make sure to delete all files except the "sce_sys" folder before copy), then encrypted and resign to your accounts (you can either use apollo and discord bot from HTOS)
 * Copy modified save to your PS4
-* Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
+* Download vtx hen from [EchoStretch's releases](https://github.com/EchoStretch/ps4-hen-vtx/releases) or from [@Al-Azif]'s [releases](https://uploadnow.io/en/share?utm_source=CBpKbp1) and use one of the `.bin` match your PS4 version and rename to `payload.bin`
 * Copy `payload.bin` to the root dir your USB drive (exFAT format) (it only needs to do once)
 * Plug the USB drive to your PS4 and run the games, it will do the exploit and copy payload to internal HDD (it only needs to be copied once) enjoy! <be>
 
@@ -41,13 +41,12 @@ Currently this loader is compatible with the following games:
 | Fuyu Kiss                             | CUSA29745   |                                                                                 |
 | Fuyu Kiss Demo                        | CUSA29746   | Requires latest firmware to download from PSN                                   |
 | Nora Princess and Crying Cat 2        | CUSA13586   |                                                                                 |
-
+| Haruoto Alice Gram Snow Drop          | CUSA14324   |                                                                                 |
 
 ## Credits
 
 * abc – for the lapse exploits
 * shahrilnet – creator and maintainer of the original [remote_lua_loader](https://github.com/shahrilnet/remote_lua_loader)
-* excellent blog [post](https://memorycorruption.net/posts/rce-lua-factorio/) where most of the ideas of lua primitives are taken from 
 * flatz - for sharing ideas and lua implementations
 * null_ptr - for helping to develop umtx exploit for PS5 & numerous helps with the loader development
 * gezine - for sharing the vulnerable games & ideas
@@ -55,4 +54,5 @@ Currently this loader is compatible with the following games:
 * al-azif - parts and information grabbed from his sdk, aswell as from his ftp server
 * horror - for the notification popup and ftp server payloads
 * everyone else who shared their knowledge with the community
+* and the excellent [blog post](https://memorycorruption.net/posts/rce-lua-factorio/) where most of the ideas of lua primitives are taken from 
 

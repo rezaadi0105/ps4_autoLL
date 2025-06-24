@@ -166,11 +166,13 @@ function main()
 
     FW_VERSION = get_version()
 
+    AUTOLL_VERSION = "0.2"
+
     thread.init()
 
     kernel_offset = get_kernel_offset()
 
-    send_ps_notification("PS4 AutoLuaLapse HEN v0.1\n Firmware: " .. FW_VERSION)
+    send_ps_notification(string.format("PS4 AutoLuaLapse HEN v%s\nFirmware: %s", AUTOLL_VERSION, FW_VERSION))
 
     if tonumber(FW_VERSION) <= 12.02 then
         kernel_exploit_lua = "lapse.lua"
