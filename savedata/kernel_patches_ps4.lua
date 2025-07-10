@@ -58,7 +58,7 @@ function get_kernel_patches_shellcode()
         shellcode = shellcode_1102
     elseif FW_VERSION == "11.50" or FW_VERSION == "11.52" then
         shellcode = shellcode_1150
-    elseif FW_VERSION == "12.00" or FW_VERSION == "12.02" then
+    elseif FW_VERSION == "12.00" or FW_VERSION == "12.02" or FW_VERSION == "12.50" then
         shellcode = shellcode_1200
     end
     if #shellcode == 0 then

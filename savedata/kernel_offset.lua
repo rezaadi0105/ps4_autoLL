@@ -320,7 +320,7 @@ ps4_kernel_offset_list = {
         SYSENT_661_OFFSET   = 0x110a760,
         JMP_RSI_GADGET      = 0x704d5
     },
-    [{ "12.00", "12.02" }] = { -- credit: @egycnq Tested
+    [{ "12.00", "12.02", "12.50" }] = { -- credit: @egycnq Tested
         EVF_OFFSET          = 0x784798,
         PRISON0             = 0x111fa18,
         ROOTVNODE           = 0x2136e90,
